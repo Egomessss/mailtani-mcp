@@ -75,6 +75,16 @@ Edit `~/Library/Application Support/Claude/claude_desktop_config.json` (Mac) or 
 
 Restart Claude Desktop. You will see a hammer icon confirming the server connected.
 
+### Claude Code
+
+Run in your terminal:
+
+```bash
+claude mcp add --transport http mailtani https://mailtani.com/mcp \
+  --header "Authorization: Bearer mk_YOUR_API_KEY" \
+  --header "X-Project-Id: YOUR_PROJECT_ID"
+```
+
 ### Cursor
 
 Add to your Cursor MCP settings (`Cursor → Settings → MCP`):
@@ -87,6 +97,25 @@ Add to your Cursor MCP settings (`Cursor → Settings → MCP`):
     "headers": {
       "Authorization": "Bearer mk_YOUR_API_KEY",
       "X-Project-Id": "YOUR_PROJECT_ID"
+    }
+  }
+}
+```
+
+### Codex
+
+Add to `~/.codex/config.json`:
+
+```json
+{
+  "mcpServers": {
+    "mailtani": {
+      "type": "http",
+      "url": "https://mailtani.com/mcp",
+      "headers": {
+        "Authorization": "Bearer mk_YOUR_API_KEY",
+        "X-Project-Id": "YOUR_PROJECT_ID"
+      }
     }
   }
 }
