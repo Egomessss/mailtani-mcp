@@ -13,7 +13,7 @@ The Mailtani MCP server exposes your contacts, lists, segments, campaigns, email
 | **Contacts** | List, create (or upsert), update, delete |
 | **Lists** | List all, create, add contacts, remove contact |
 | **Segments** | List all, create with conditions, get matching contacts |
-| **Campaigns** | List, create, activate, enroll a contact |
+| **Campaigns** | List, create broadcast, create sequence, create flow (all as drafts) |
 | **Emails** | List sent emails, send one-off transactional email |
 | **Tags** | List all, create, delete |
 | **Custom Fields** | List all, create |
@@ -22,13 +22,17 @@ The Mailtani MCP server exposes your contacts, lists, segments, campaigns, email
 ### Example prompts you can use
 
 ```
-"Add everyone from the 'Leads' list to my Q3 broadcast campaign and activate it."
+"Create a broadcast campaign called 'Q3 Newsletter' targeting my 'Leads' list."
 
 "Create a contact for john@acme.com, tag him as VIP, and send him the onboarding email."
 
 "Track a purchase_completed event for sarah@example.com with plan=pro."
 
-"Show me all contacts added in the last 7 days who haven't been enrolled in any campaign."
+"Show me all contacts added in the last 7 days."
+
+"Set up a 3-step welcome sequence for new signups with delays of 0, 3, and 7 days."
+
+"Create a flow that sends an email whenever a contact is added to my project."
 ```
 
 ---
@@ -130,12 +134,14 @@ Rate limit: 30 requests / minute
 
 ### Campaigns
 
+Campaigns are always created as **drafts**. Open the Mailtani app to review and activate them.
+
 | Tool | Description |
 |---|---|
 | `list-campaigns` | List campaigns filtered by type or status |
-| `create-campaign` | Create a draft campaign (broadcast, sequence, or flow) |
-| `activate-campaign` | Activate a draft campaign |
-| `enroll-contact` | Enroll a single contact into a campaign |
+| `create-broadcast` | Create a one-time email blast draft; optionally target lists and segments |
+| `create-sequence` | Create a multi-step drip sequence draft with per-step delays |
+| `create-flow` | Create a visual automation flow draft triggered by contact behaviour |
 
 ### Emails
 
