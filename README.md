@@ -63,7 +63,7 @@ Edit `~/Library/Application Support/Claude/claude_desktop_config.json` (Mac) or 
   "mcpServers": {
     "mailtani": {
       "type": "http",
-      "url": "https://app.mailtani.com/mcp",
+      "url": "https://mailtani.com/mcp",
       "headers": {
         "Authorization": "Bearer mk_YOUR_API_KEY",
         "X-Project-Id": "YOUR_PROJECT_ID"
@@ -83,7 +83,7 @@ Add to your Cursor MCP settings (`Cursor → Settings → MCP`):
 {
   "mailtani": {
     "type": "http",
-    "url": "https://app.mailtani.com/mcp",
+    "url": "https://mailtani.com/mcp",
     "headers": {
       "Authorization": "Bearer mk_YOUR_API_KEY",
       "X-Project-Id": "YOUR_PROJECT_ID"
@@ -95,7 +95,7 @@ Add to your Cursor MCP settings (`Cursor → Settings → MCP`):
 ### Any MCP-compatible client
 
 ```
-Endpoint:  POST https://app.mailtani.com/mcp
+Endpoint:  POST https://mailtani.com/mcp
 Protocol:  MCP over HTTP (JSON-RPC 2.0)
 Auth:      Authorization: Bearer mk_...
 Scope:     X-Project-Id: <id>
@@ -187,4 +187,4 @@ Campaigns are always created as **drafts**. Open the Mailtani app to review and 
 - [Mailtani](https://mailtani.com)
 - [REST API docs](https://mailtani.com/docs/api)
 - [MCP server docs](https://mailtani.com/docs/mcp)
-- [Get an API key](https://app.mailtani.com/settings/api)
+- [Get an API key](https://mailtani.com/settings/api)
